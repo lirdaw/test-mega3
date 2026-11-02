@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-11-02
 ---
 
 # Morning digest
@@ -77,3 +78,17 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | Run log reader: one row per job from runs/<night>.jsonl | — | claude-code · Claude (Anthropic) · default effort | 2026-11-02 |
+| 2 | Digest page: GET /digest/:night | #1 | claude-code · Claude (Anthropic) · default effort | 2026-11-02 |
+| 3 | Digest JSON: GET /api/digest/:night | #1 | claude-code · Claude (Anthropic) · default effort | 2026-11-02 |
+| 4 | Board link: each night on disk links to its digest with ok / retry / fail counts | #1, #2 | claude-code · Claude (Anthropic) · default effort | 2026-11-02 |
+| 5 | Route tests for the digest page and JSON | #1, #2, #3 | claude-code · Claude (Anthropic) · default effort | 2026-11-02 |
+| 6 | Preview for review: /digest/2026-10-28 as one HTML file on a public link | #2–#5 | claude-code · Claude (Anthropic) · default effort | 2026-11-02 |
+| 7 | Clean up: preview without the lane marker, plan moved to docs/plans/done/ | #6, review | claude-code · Claude (Anthropic) · default effort | 2026-11-02 |
+
+The preview at https://rig-preview.lirdaw.workers.dev was uploaded again without the lane marker once the review was in. #6 was closed too early once, before the reviewer looked, and reopened.
